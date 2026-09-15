@@ -1,0 +1,167 @@
+{
+    "version": 1,
+    "guideline_version": 1,
+    "cases": [
+      {
+        "id": "c001",
+        "input": "Please update the credit card on file for my account. The current one expires next month.",
+        "expected_category": "account",
+        "acceptable_categories": ["billing"],
+        "expected_summary": "Customer wants to replace the payment card on their account before it expires.",
+        "difficulty": "medium",
+        "tags": ["boundary:account-billing"],
+        "notes": "Lesson 2 called this 'clear' and the model split 18/2. Payment-method changes sit on the account/billing line; GUIDELINE rule 3 decides it."
+      },
+      {
+        "id": "c002",
+        "input": "hi, i was charged twice for my subscription this month and the app also keeps crashing when i open settings. can someone sort this out",
+        "expected_category": "billing",
+        "acceptable_categories": ["technical"],
+        "expected_summary": "Customer was charged twice this month and the app crashes on the settings screen.",
+        "difficulty": "hard",
+        "tags": ["two-issues"],
+        "notes": "Two real complaints. Rule 4: money leads. A summary that drops the crash is a worse summary even when the category is right."
+      },
+      {
+        "id": "c003",
+        "input": "cant log in",
+        "expected_category": "account",
+        "acceptable_categories": ["technical"],
+        "expected_summary": "Customer cannot log in; no details given.",
+        "difficulty": "hard",
+        "tags": ["short"],
+        "notes": "Three words. Tests whether the model invents details the email does not contain."
+      },
+      {
+        "id": "c004",
+        "input": "i was billed $49.99 twice on mar 3 and since the update yestrday the export button just spins forever. need the extra charge back and exports working.",
+        "expected_category": "billing",
+        "acceptable_categories": ["technical"],
+        "expected_summary": "Customer was charged $49.99 twice on March 3 and the export button spins indefinitely since yesterday's update.",
+        "difficulty": "hard",
+        "tags": ["two-issues"],
+        "notes": "Rule 4: money leads. Summary must name both the duplicate charge and the broken export — same trap as c002 with a different surface."
+      },
+      {
+        "id": "c005",
+        "input": "hi i was suposed to get a refnd for my cancleation last week but i still se the charge on my statment can u help??",
+        "expected_category": "billing",
+        "acceptable_categories": [],
+        "expected_summary": "Customer says they still see a charge for a cancelled subscription and expected a refund last week.",
+        "difficulty": "medium",
+        "tags": ["typos"],
+        "notes": "Misspellings only; intent is clear. Tests whether sloppy spelling changes classification or makes the model hallucinate amounts."
+      },
+      {
+        "id": "c006",
+        "input": "Could you send me a copy of my invoice for January? I need it for my accountant.",
+        "expected_category": "billing",
+        "acceptable_categories": [],
+        "expected_summary": "Customer requests a copy of their January invoice for their accountant.",
+        "difficulty": "easy",
+        "tags": ["baseline"],
+        "notes": "Straightforward invoice request. Baseline billing case with no boundary ambiguity."
+      },
+      {
+        "id": "c007",
+        "input": "Oh great, another update that 'improves performance' and now the dashboard won't load at all. Really loving this product. Been trying for 20 minutes.",
+        "expected_category": "technical",
+        "acceptable_categories": [],
+        "expected_summary": "Customer says the dashboard will not load after a recent update; no other details given.",
+        "difficulty": "hard",
+        "tags": ["sarcastic"],
+        "notes": "Sarcasm is tone, not category. Complaint is a broken dashboard after an update; summary should state the problem, not echo the sarcasm."
+      },
+      {
+        "id": "c008",
+        "input": "Every time I click Save on the profile page I get 'Error 500' and my changes are lost.",
+        "expected_category": "technical",
+        "acceptable_categories": ["account"],
+        "expected_summary": "Customer gets Error 500 when saving on the profile page and changes are not saved.",
+        "difficulty": "medium",
+        "tags": ["boundary:account-technical"],
+        "notes": "Profile page sounds like account, but the issue is a server error on save — technical per guideline, not a login or credential problem."
+      },
+      {
+        "id": "c009",
+        "input": "The mobile app crashes immediately when I open any notification.",
+        "expected_category": "technical",
+        "acceptable_categories": [],
+        "expected_summary": "Customer reports the mobile app crashes when opening notifications.",
+        "difficulty": "easy",
+        "tags": ["baseline"],
+        "notes": "Clear bug report with no boundary ambiguity."
+      },
+      {
+        "id": "c010",
+        "input": "locked out",
+        "expected_category": "account",
+        "acceptable_categories": ["technical"],
+        "expected_summary": "Customer says they are locked out; no details given.",
+        "difficulty": "hard",
+        "tags": ["short"],
+        "notes": "Two words. Same trap as c003: model must not invent why they are locked out or what they already tried."
+      },
+      {
+        "id": "c011",
+        "input": "مرحبا I forgot my password and I can't access my account. ممكن تساعدوني reset it please?",
+        "expected_category": "account",
+        "acceptable_categories": [],
+        "expected_summary": "Customer forgot their password and cannot access their account; asks for help resetting it.",
+        "difficulty": "medium",
+        "tags": ["mixed-language"],
+        "notes": "Arabic greeting and plea mixed with English — typical bilingual support inbox. Category is account; summary stays in English and does not translate filler words."
+      },
+      {
+        "id": "c012",
+        "input": "I'd like to change the email address on my account from john@old.com to john@new.com.",
+        "expected_category": "account",
+        "acceptable_categories": [],
+        "expected_summary": "Customer wants to change the email address on their account from john@old.com to john@new.com.",
+        "difficulty": "easy",
+        "tags": ["baseline"],
+        "notes": "Profile/access change with no login failure and no billing dispute."
+      },
+      {
+        "id": "c013",
+        "input": "Your pricing page doesn't say whether the Team plan includes SSO. Before we buy I'd like a straight answer.",
+        "expected_category": "general",
+        "acceptable_categories": ["technical"],
+        "expected_summary": "Customer asks whether the Team plan includes SSO before purchasing.",
+        "difficulty": "hard",
+        "tags": ["boundary:general-technical"],
+        "notes": "Pre-sales product question — general, not technical (nothing is broken) and not billing (no charge or refund in play)."
+      },
+      {
+        "id": "c014",
+        "input": "How do I export my data to CSV? I looked in Settings but couldn't find the option.",
+        "expected_category": "general",
+        "acceptable_categories": ["technical"],
+        "expected_summary": "Customer asks how to export data to CSV and could not find the option in Settings.",
+        "difficulty": "medium",
+        "tags": ["how-to"],
+        "notes": "Guideline rule 2: a how-to about a feature that may simply be hard to find is general, not technical."
+      },
+      {
+        "id": "c015",
+        "input": "Thanks for fixing the login issue last week — everything's working fine now.",
+        "expected_category": "general",
+        "acceptable_categories": ["account"],
+        "expected_summary": "Customer thanks support for a resolved login issue; no request stated.",
+        "difficulty": "easy",
+        "tags": ["no-request"],
+        "notes": "No actionable request. 'general' is correct even though login is mentioned in passing."
+      },
+      {
+        "id": "c016",
+        "input": "تم خصم اشتراكي مرتين هذا الشهر من نفس البطاقة. أرجو إرجاع المبلغ الزائد.",
+        "expected_category": "billing",
+        "acceptable_categories": [],
+        "expected_summary": "Customer says their subscription was charged twice this month on the same card and wants the extra charge refunded.",
+        "difficulty": "medium",
+        "tags": ["arabic-only"],
+        "notes": "Entirely in Arabic — no English in the input. Tests whether the model classifies and writes an English summary from Arabic-only text."
+      }
+    ]
+  }
+  

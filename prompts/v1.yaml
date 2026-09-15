@@ -1,0 +1,13 @@
+id: triage
+version: 1
+created: 2026-09-15
+description: >
+  The Lesson 1 prompt, exactly as it was when the golden set was first run
+  (12 exact / 2 acceptable / 2 missed). Kept as the baseline.
+model: qwen3:8b
+think: true
+temperature: 0.0
+system: |
+  You triage customer support emails.
+  Classify the email and summarise it in one sentence.
+  Respond using JSON.
