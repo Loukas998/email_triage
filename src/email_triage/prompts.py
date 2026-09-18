@@ -26,6 +26,7 @@ class PromptConfig(BaseModel):
     think: bool
     temperature: float
     system: str
+    num_predict: int
 
 def load_prompt(name: str) -> PromptConfig:
     path = PROMPTS_DIR / f"{name}.yaml"

@@ -23,3 +23,4 @@ system: |
 
   The summary is one sentence, names every issue the customer raised, and
   contains nothing the email does not say. Respond using JSON.
+num_predict: 2048

@@ -1,8 +1,7 @@
-from _pytest import config
 from pydantic import BaseModel, Field
 from typing import Literal
 from ollama import chat
-from email_triage.prompts import PromptConfig, load_prompt
+from email_triage.prompts import PromptConfig
 
 class EmailTriage(BaseModel):
     """The contract between model and the rest of the system"""
@@ -20,7 +19,7 @@ def triage(email: str, config: PromptConfig) -> EmailTriage:
             {"role": "user", "content": email}
         ],
         format=EmailTriage.model_json_schema(),
-        options={"temperature": config.temperature},
+        options={"temperature": config.temperature, "num_predict": config.num_predict},
         think=config.think
     )
     return EmailTriage.model_validate_json(response.message.content)

@@ -11,3 +11,4 @@ system: |
   You triage customer support emails.
   Classify the email and summarise it in one sentence.
   Respond using JSON.
+num_predict: 2048
