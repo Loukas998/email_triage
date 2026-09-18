@@ -1,0 +1,22 @@
+id: summary-judge
+version: 1
+created: 2026-09-16
+description: >
+  First judge for summaries. Binary pass/fail with a one-sentence critique, scored
+  against golden/SUMMARY-RUBRIC.md, with the train-split labels as examples.
+  {rubric} and {examples} are filled in from those files at run time.
+model: gemini-3.8-flash
+thinking_level: low
+seed: 0
+system: |
+  You check one-sentence summaries of customer support emails written by
+  another model. You are given the email and the summary. A summary passes
+  only if it breaks none of the rules in the rubric. When it fails, name the
+  rule it broke and the words that broke it, in one sentence. Be strict:
+  the summaries are used to route real customers.
+
+  Rubric:
+  {rubric}
+
+  Examples labelled by the product owner:
+  {examples}

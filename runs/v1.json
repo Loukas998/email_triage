@@ -1,0 +1,106 @@
+{
+  "prompt": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+  "prompt_version": 1,
+  "model": "qwen3:8b",
+  "think": true,
+  "dataset_version": 1,
+  "guideline_version": 1,
+  "outputs": [
+    {
+      "case_id": "c001",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "Customer requests to update their credit card information due to the current card's expiration date in the next month."
+    },
+    {
+      "case_id": "c002",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "Customer reports double subscription charges and app crashes when opening settings, requesting resolution for both issues."
+    },
+    {
+      "case_id": "c003",
+      "verdict": "acceptable",
+      "category": "technical",
+      "summary": "User is unable to log in and requires assistance."
+    },
+    {
+      "case_id": "c004",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "Customer reports duplicate $49.99 charges on March 3 and export button malfunctioning since yesterday's update, requesting refund and resolution for both issues."
+    },
+    {
+      "case_id": "c005",
+      "verdict": "missed",
+      "category": "account",
+      "summary": "Customer is waiting for a refund for a canceled order that hasn't been processed yet, as the charge still appears on their statement."
+    },
+    {
+      "case_id": "c006",
+      "verdict": "missed",
+      "category": "account",
+      "summary": "Customer requests a copy of their January invoice for submission to their accountant."
+    },
+    {
+      "case_id": "c007",
+      "verdict": "exact",
+      "category": "technical",
+      "summary": "User reports that a recent update caused the dashboard to fail to load, despite claims of performance improvements, after 20 minutes of unsuccessful attempts."
+    },
+    {
+      "case_id": "c008",
+      "verdict": "exact",
+      "category": "technical",
+      "summary": "User receives 'Error 500' when saving profile changes, causing data loss upon each attempt."
+    },
+    {
+      "case_id": "c009",
+      "verdict": "exact",
+      "category": "technical",
+      "summary": "The user's mobile app crashes immediately when opening any notification."
+    },
+    {
+      "case_id": "c010",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "The user is unable to access their account or device and is seeking assistance to regain access."
+    },
+    {
+      "case_id": "c011",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "User forgot their password and is unable to access their account, requesting assistance to reset it."
+    },
+    {
+      "case_id": "c012",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "Request to change email address from john@old.com to john@new.com"
+    },
+    {
+      "case_id": "c013",
+      "verdict": "missed",
+      "category": "billing",
+      "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page."
+    },
+    {
+      "case_id": "c014",
+      "verdict": "acceptable",
+      "category": "technical",
+      "summary": "User is unable to locate the CSV export option in Settings and is seeking guidance on how to export their data."
+    },
+    {
+      "case_id": "c015",
+      "verdict": "exact",
+      "category": "general",
+      "summary": "Customer is thanking the support team for resolving the login issue last week and confirms everything is now working properly."
+    },
+    {
+      "case_id": "c016",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount."
+    }
+  ]
+}

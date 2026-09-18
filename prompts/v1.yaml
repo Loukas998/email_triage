@@ -7,8 +7,5 @@ description: >
 model: qwen3:8b
 think: true
 temperature: 0.0
-system: |
-  You triage customer support emails.
-  Classify the email and summarise it in one sentence.
-  Respond using JSON.
 num_predict: 2048
+system: "You triage customer support emails. Classify the email and summarise it in one sentence. Respond using JSON. "

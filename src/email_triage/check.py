@@ -6,12 +6,14 @@
 
 import sys
 from collections import Counter
+from turtle import mode
 
 from pydantic import ValidationError
 
-from email_triage.dataset import load
+from email_triage.dataset import load, PROJECT_ROOT
 from email_triage.prompts import load_prompt
 from email_triage.triage import triage
+from email_triage.runs import Run, RunOutput, save_run
 
 MARK = {"exact": "  ", "acceptable": "~ ", "missed": "X ", "error": "! "}
 
@@ -20,6 +22,7 @@ def main(prompt_name: str) -> None:
     config = load_prompt(prompt_name)
     dataset = load()
     tally: Counter[str] = Counter()
+    outputs: list[RunOutput] = []
 
     for case in dataset.cases:
         try:
@@ -28,12 +31,25 @@ def main(prompt_name: str) -> None:
             # The model hit the token cap mid-thought, or returned something the schema rejects.
             # Count it and keep going: one bad call must not take the whole run down.
             tally["error"] += 1
+            outputs.append(RunOutput(case_id=case.id, verdict="error"))
             print(f"{MARK['error']}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got=ERROR ({err.error_count()} validation errors)")
             print()
             continue
 
         verdict = case.verdict(result.category)
         tally[verdict] += 1
+        outputs.append(RunOutput(case_id=case.id, verdict=verdict, category=result.category, summary=result.summary))
+
+        path = save_run(Run(
+            prompt=config.system,
+            prompt_version=config.version,
+            model=config.model,
+            think=config.think,
+            dataset_version=dataset.version,
+            guideline_version=dataset.guideline_version,
+            outputs= outputs
+        ))
+        print(f"saved {path.relative_to(PROJECT_ROOT)}")
 
         print(f"{MARK[verdict]}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got={result.category}")
         print(f"          model: {result.summary}")

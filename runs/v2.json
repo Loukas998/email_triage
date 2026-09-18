@@ -1,0 +1,106 @@
+{
+  "prompt": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+  "prompt_version": 2,
+  "model": "qwen3:8b",
+  "think": true,
+  "dataset_version": 1,
+  "guideline_version": 1,
+  "outputs": [
+    {
+      "case_id": "c001",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "The customer needs to update their credit card on file as the current one expires next month."
+    },
+    {
+      "case_id": "c002",
+      "verdict": "error",
+      "category": null,
+      "summary": null
+    },
+    {
+      "case_id": "c003",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "Customer cannot log in."
+    },
+    {
+      "case_id": "c004",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "Customer was charged $49.99 twice on March 3 and is experiencing technical issues with the export button spinning indefinitely since yesterday's update, requesting a refund for the duplicate charge và"
+    },
+    {
+      "case_id": "c005",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "The customer expected a refund for their cancellation last week but still sees the charge on their statement and is asking for help."
+    },
+    {
+      "case_id": "c006",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "Request for a copy of the January invoice to provide to their accountant.boxes"
+    },
+    {
+      "case_id": "c007",
+      "verdict": "exact",
+      "category": "technical",
+      "summary": "The dashboard won't load after an update that was supposed to improve performance, and the user has tried for 20 minutes without success."
+    },
+    {
+      "case_id": "c008",
+      "verdict": "exact",
+      "category": "technical",
+      "summary": "The user encounters an 'Error 500' when saving profile changes, resulting in lost modifications."
+    },
+    {
+      "case_id": "c009",
+      "verdict": "exact",
+      "category": "technical",
+      "summary": "The mobile app crashes immediately when opening any notification."
+    },
+    {
+      "case_id": "c010",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "Customer is locked out and needs assistance accessing their account."
+    },
+    {
+      "case_id": "c011",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "The customer forgot their password and cannot access their account, requesting assistance to reset it."
+    },
+    {
+      "case_id": "c012",
+      "verdict": "exact",
+      "category": "account",
+      "summary": "The customer requests to change their account email address from john@old.com to john@new.com."
+    },
+    {
+      "case_id": "c013",
+      "verdict": "exact",
+      "category": "general",
+      "summary": "The customer is asking whether the Team plan includes SSO, seeking clarification on the pricing page's information."
+    },
+    {
+      "case_id": "c014",
+      "verdict": "exact",
+      "category": "general",
+      "summary": "The customer asks how to export their data to CSV and mentions they couldn't find the option in Settings."
+    },
+    {
+      "case_id": "c015",
+      "verdict": "acceptable",
+      "category": "account",
+      "summary": "The customer thanked the support team for resolving their login issue last week, confirming that everything is now working properly."
+    },
+    {
+      "case_id": "c016",
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "العميل أفاد بتم خصم اشتراكي مرتين هذا الشهر من نفس البطاقة وطلب إرجاع المبلغ الزائد."
+    }
+  ]
+}
