@@ -1,5 +1,5 @@
 {
-  "prompt": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+  "prompt": "v2",
   "prompt_version": 2,
   "model": "qwen3:8b",
   "think": true,

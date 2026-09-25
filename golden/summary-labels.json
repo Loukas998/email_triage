@@ -3,7 +3,7 @@
   "rubric_version": 1,
   "labels": [
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c001",
       "summary": "Customer requests to update their credit card information due to the current card's expiration date in the next month.",
       "passed": false,
@@ -11,7 +11,7 @@
       "split": "train"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c002",
       "summary": "Customer reports double subscription charges and app crashes when opening settings, requesting resolution for both issues.",
       "passed": true,
@@ -19,7 +19,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c003",
       "summary": "User is unable to log in and requires assistance.",
       "passed": true,
@@ -27,7 +27,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c004",
       "summary": "Customer reports duplicate $49.99 charges on March 3 and export button malfunctioning since yesterday's update, requesting refund and resolution for both issues.",
       "passed": false,
@@ -35,7 +35,7 @@
       "split": "train"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c005",
       "summary": "Customer is waiting for a refund for a canceled order that hasn't been processed yet, as the charge still appears on their statement.",
       "passed": true,
@@ -43,7 +43,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c006",
       "summary": "Customer requests a copy of their January invoice for submission to their accountant.",
       "passed": true,
@@ -51,7 +51,7 @@
       "split": "train"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c007",
       "summary": "User reports that a recent update caused the dashboard to fail to load, despite claims of performance improvements, after 20 minutes of unsuccessful attempts.",
       "passed": false,
@@ -59,7 +59,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c008",
       "summary": "User receives 'Error 500' when saving profile changes, causing data loss upon each attempt.",
       "passed": false,
@@ -67,7 +67,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c009",
       "summary": "The user's mobile app crashes immediately when opening any notification.",
       "passed": true,
@@ -75,7 +75,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c010",
       "summary": "The user is unable to access their account or device and is seeking assistance to regain access.",
       "passed": true,
@@ -83,7 +83,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c011",
       "summary": "User forgot their password and is unable to access their account, requesting assistance to reset it.",
       "passed": true,
@@ -91,7 +91,7 @@
       "split": "train"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c012",
       "summary": "Request to change email address from john@old.com to john@new.com",
       "passed": true,
@@ -99,7 +99,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c013",
       "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page.",
       "passed": false,
@@ -107,7 +107,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c014",
       "summary": "User is unable to locate the CSV export option in Settings and is seeking guidance on how to export their data.",
       "passed": true,
@@ -115,7 +115,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c015",
       "summary": "Customer is thanking the support team for resolving the login issue last week and confirms everything is now working properly.",
       "passed": false,
@@ -123,7 +123,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+      "run": "v1",
       "case_id": "c016",
       "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount.",
       "passed": true,
@@ -131,7 +131,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c001",
       "summary": "The customer needs to update their credit card on file as the current one expires next month.",
       "passed": true,
@@ -139,7 +139,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c003",
       "summary": "Customer cannot log in.",
       "passed": true,
@@ -147,7 +147,7 @@
       "split": "train"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c004",
       "summary": "Customer was charged $49.99 twice on March 3 and is experiencing technical issues with the export button spinning indefinitely since yesterday's update, requesting a refund for the duplicate charge và",
       "passed": false,
@@ -155,7 +155,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c005",
       "summary": "The customer expected a refund for their cancellation last week but still sees the charge on their statement and is asking for help.",
       "passed": true,
@@ -163,7 +163,7 @@
       "split": "train"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c006",
       "summary": "Request for a copy of the January invoice to provide to their accountant.boxes",
       "passed": false,
@@ -171,7 +171,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c007",
       "summary": "The dashboard won't load after an update that was supposed to improve performance, and the user has tried for 20 minutes without success.",
       "passed": true,
@@ -179,7 +179,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c008",
       "summary": "The user encounters an 'Error 500' when saving profile changes, resulting in lost modifications.",
       "passed": true,
@@ -187,7 +187,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c009",
       "summary": "The mobile app crashes immediately when opening any notification.",
       "passed": true,
@@ -195,7 +195,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c010",
       "summary": "Customer is locked out and needs assistance accessing their account.",
       "passed": true,
@@ -203,7 +203,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c011",
       "summary": "The customer forgot their password and cannot access their account, requesting assistance to reset it.",
       "passed": true,
@@ -211,7 +211,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c012",
       "summary": "The customer requests to change their account email address from john@old.com to john@new.com.",
       "passed": false,
@@ -219,7 +219,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c013",
       "summary": "The customer is asking whether the Team plan includes SSO, seeking clarification on the pricing page's information.",
       "passed": false,
@@ -227,7 +227,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c014",
       "summary": "The customer asks how to export their data to CSV and mentions they couldn't find the option in Settings.",
       "passed": false,
@@ -235,7 +235,7 @@
       "split": "dev"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c015",
       "summary": "The customer thanked the support team for resolving their login issue last week, confirming that everything is now working properly.",
       "passed": false,
@@ -243,7 +243,7 @@
       "split": "test"
     },
     {
-      "run": "You triage customer support emails. Classify each email into exactly one\ncategory and summarise it in one sentence.\n\nCategories:\n- billing: money that moved or should move — charges, refunds, invoices,\n  plan prices, failed payments.\n- technical: the product does not work as designed — crashes, errors,\n  bugs, features not loading.\n- account: who the customer is and how they access things — login,\n  password, email address, profile, payment method on file.\n- general: everything else — questions, feedback, feature requests,\n  \"how do I\", messages with no request at all.\n\nThe summary is one sentence, names every issue the customer raised, and\ncontains nothing the email does not say. Respond using JSON.\n",
+      "run": "v2",
       "case_id": "c016",
       "summary": "العميل أفاد بتم خصم اشتراكي مرتين هذا الشهر من نفس البطاقة وطلب إرجاع المبلغ الزائد.",
       "passed": false,

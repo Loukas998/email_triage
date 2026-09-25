@@ -48,5 +48,5 @@ def save_run(run: Run) -> Path:
     return path
 
 
-def load_run(prompt_version: str):
-    return Run.model_validate_json((RUNS_DIR / f"{prompt_version}.json").read_text())
+def load_run(prompt: str):
+    return Run.model_validate_json((RUNS_DIR / f"{prompt}.json").read_text())

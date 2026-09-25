@@ -1,5 +1,5 @@
 {
-  "prompt": "You triage customer support emails.\nClassify the email and summarise it in one sentence.\nRespond using JSON.\n",
+  "prompt": "v1",
   "prompt_version": 1,
   "model": "qwen3:8b",
   "think": true,
@@ -10,13 +10,13 @@
       "case_id": "c001",
       "verdict": "exact",
       "category": "account",
-      "summary": "Customer requests to update their credit card information due to the current card's expiration date in the next month."
+      "summary": "Customer requests to update their credit card information due to the current card's expiration next month."
     },
     {
       "case_id": "c002",
       "verdict": "exact",
       "category": "billing",
-      "summary": "Customer reports double subscription charges and app crashes when opening settings, requesting resolution for both issues."
+      "summary": "Customer reports duplicate subscription charges and app crashes when opening settings, requesting resolution for both issues."
     },
     {
       "case_id": "c003",
@@ -34,37 +34,37 @@
       "case_id": "c005",
       "verdict": "missed",
       "category": "account",
-      "summary": "Customer is waiting for a refund for a canceled order that hasn't been processed yet, as the charge still appears on their statement."
+      "summary": "The user is seeking assistance with a refund that was supposed to be processed for a canceled order last week, as the charge still appears on their statement."
     },
     {
       "case_id": "c006",
-      "verdict": "missed",
-      "category": "account",
-      "summary": "Customer requests a copy of their January invoice for submission to their accountant."
+      "verdict": "exact",
+      "category": "billing",
+      "summary": "The user is requesting a copy of their January invoice to provide to their accountant."
     },
     {
       "case_id": "c007",
       "verdict": "exact",
       "category": "technical",
-      "summary": "User reports that a recent update caused the dashboard to fail to load, despite claims of performance improvements, after 20 minutes of unsuccessful attempts."
+      "summary": "User reports dashboard failure to load after a performance update, expressing frustration with the issue persisting for 20 minutes."
     },
     {
       "case_id": "c008",
       "verdict": "exact",
       "category": "technical",
-      "summary": "User receives 'Error 500' when saving profile changes, causing data loss upon each attempt."
+      "summary": "User receives a 'Error 500' when saving profile changes, causing modifications to be lost."
     },
     {
       "case_id": "c009",
       "verdict": "exact",
       "category": "technical",
-      "summary": "The user's mobile app crashes immediately when opening any notification."
+      "summary": "The user's mobile app crashes immediately upon opening any notification."
     },
     {
       "case_id": "c010",
       "verdict": "exact",
       "category": "account",
-      "summary": "The user is unable to access their account or device and is seeking assistance to regain access."
+      "summary": "User is unable to access their account and is locked out."
     },
     {
       "case_id": "c011",
@@ -76,7 +76,7 @@
       "case_id": "c012",
       "verdict": "exact",
       "category": "account",
-      "summary": "Request to change email address from john@old.com to john@new.com"
+      "summary": "Customer requests to change their account email from john@old.com to john@new.com"
     },
     {
       "case_id": "c013",
@@ -88,13 +88,13 @@
       "case_id": "c014",
       "verdict": "acceptable",
       "category": "technical",
-      "summary": "User is unable to locate the CSV export option in Settings and is seeking guidance on how to export their data."
+      "summary": "User is unable to locate the CSV export option in Settings and is seeking instructions on how to export their data to CSV format."
     },
     {
       "case_id": "c015",
       "verdict": "exact",
       "category": "general",
-      "summary": "Customer is thanking the support team for resolving the login issue last week and confirms everything is now working properly."
+      "summary": "Customer expresses gratitude for resolving the login issue and confirms everything is now working properly."
     },
     {
       "case_id": "c016",

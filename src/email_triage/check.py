@@ -40,17 +40,6 @@ def main(prompt_name: str) -> None:
         tally[verdict] += 1
         outputs.append(RunOutput(case_id=case.id, verdict=verdict, category=result.category, summary=result.summary))
 
-        path = save_run(Run(
-            prompt=config.system,
-            prompt_version=config.version,
-            model=config.model,
-            think=config.think,
-            dataset_version=dataset.version,
-            guideline_version=dataset.guideline_version,
-            outputs= outputs
-        ))
-        print(f"saved {path.relative_to(PROJECT_ROOT)}")
-
         print(f"{MARK[verdict]}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got={result.category}")
         print(f"          model: {result.summary}")
         if verdict != "exact":
@@ -61,6 +50,17 @@ def main(prompt_name: str) -> None:
     n = len(dataset.cases)
     print(f"{n} cases · exact {tally['exact']} · acceptable {tally['acceptable']} · missed {tally['missed']} · error {tally['error']}")
     print(f"prompt {config.id} v{config.version} (think={config.think}) · dataset v{dataset.version} · guideline v{dataset.guideline_version}")
+
+    path = save_run(Run(
+        prompt=prompt_name,
+        prompt_version=config.version,
+        model=config.model,
+        think=config.think,
+        dataset_version=dataset.version,
+        guideline_version=dataset.guideline_version,
+        outputs=outputs,
+    ))
+    print(f"saved {path.relative_to(PROJECT_ROOT)}")
 
 
 if __name__ == "__main__":
