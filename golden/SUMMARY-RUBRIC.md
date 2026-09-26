@@ -13,6 +13,8 @@ first, then label — never the other way round.
    not in the customer's language.
 4. **Summary length** The summary should include only the core customer's issue,
    not a full detailed dates, user's data or any other unnecessary information.
+5. **Credentials Details** The summary should include any emails or passwords,
+   this rule apply to new and old credentials.
 
 Passing is not "good". Passing is "breaks no rule". If a summary feels
 wrong and breaks no rule, the rubric is missing a rule.

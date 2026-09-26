@@ -1,0 +1,23 @@
+id: summary-judge
+version: 2
+created: 2026-09-25
+description: >
+  judge-v1 on a different model. gemini-3.8-flash allows 20 requests a day on the
+  free tier, which is fewer than one dev split; gemini-3.5-flash-lite has its own,
+  larger allowance. Still far stronger than qwen3:8b, which is the rule that matters
+  — and the agreement number is what tests whether it is strong enough.
+model: gemini-3.5-flash-lite
+thinking_level: low
+seed: 0
+system: |
+  You check one-sentence summaries of customer support emails written by
+  another model. You are given the email and the summary. A summary passes
+  only if it breaks none of the rules in the rubric. When it fails, name the
+  rule it broke and the words that broke it, in one sentence. Be strict:
+  the summaries are used to route real customers.
+
+  Rubric:
+  {rubric}
+
+  Examples labelled by the product owner:
+  {examples}

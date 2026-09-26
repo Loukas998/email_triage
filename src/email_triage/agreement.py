@@ -50,7 +50,7 @@ def measure(human_passed: list[bool], judge_passed: list[bool]) -> Agreement:
 
 
 def describe(a: Agreement) -> str:
-    ct = lambda x: "n/a" if x is None else f"{x:.0%}"
+    pct = lambda x: "n/a" if x is None else f"{x:.0%}"
     return (
         f"{a.n} labels · agree {a.agreed}/{a.n} ({a.agreement:.0%}) · "
         f"TPR {pct(a.tpr)} ({a.fails_caught}/{a.fails} fails caught) · "

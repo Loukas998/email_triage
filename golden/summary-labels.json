@@ -5,25 +5,25 @@
     {
       "run": "v1",
       "case_id": "c001",
-      "summary": "Customer requests to update their credit card information due to the current card's expiration date in the next month.",
+      "summary": "Customer requests to update their credit card information due to the current card's expiration next month.",
       "passed": false,
-      "critique": "The summary is longer than the email itself, it should be shorter and more direct",
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "train"
     },
     {
       "run": "v1",
       "case_id": "c002",
-      "summary": "Customer reports double subscription charges and app crashes when opening settings, requesting resolution for both issues.",
-      "passed": true,
-      "critique": "All the issues mentioned in the email are also mentioned in the summary clearly",
+      "summary": "Customer reports duplicate subscription charges and app crashes when opening settings, requesting resolution for both issues.",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "test"
     },
     {
       "run": "v1",
       "case_id": "c003",
       "summary": "User is unable to log in and requires assistance.",
-      "passed": true,
-      "critique": "He didn't ask for assistance, don't assume things",
+      "passed": false,
+      "critique": "He didn't explicitly ask for assitant, and the summary shouldn't include user requests.",
       "split": "dev"
     },
     {
@@ -31,53 +31,53 @@
       "case_id": "c004",
       "summary": "Customer reports duplicate $49.99 charges on March 3 and export button malfunctioning since yesterday's update, requesting refund and resolution for both issues.",
       "passed": false,
-      "critique": "So long",
+      "critique": "The summary shouldn't include user requests.",
       "split": "train"
     },
     {
       "run": "v1",
       "case_id": "c005",
-      "summary": "Customer is waiting for a refund for a canceled order that hasn't been processed yet, as the charge still appears on their statement.",
-      "passed": true,
-      "critique": "No critique here",
+      "summary": "The user is seeking assistance with a refund that was supposed to be processed for a canceled order last week, as the charge still appears on their statement.",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "dev"
     },
     {
       "run": "v1",
       "case_id": "c006",
-      "summary": "Customer requests a copy of their January invoice for submission to their accountant.",
+      "summary": "The user is requesting a copy of their January invoice to provide to their accountant.",
       "passed": true,
-      "critique": "No critique here",
+      "critique": "Works, but time details are not necessary",
       "split": "train"
     },
     {
       "run": "v1",
       "case_id": "c007",
-      "summary": "User reports that a recent update caused the dashboard to fail to load, despite claims of performance improvements, after 20 minutes of unsuccessful attempts.",
+      "summary": "User reports dashboard failure to load after a performance update, expressing frustration with the issue persisting for 20 minutes.",
       "passed": false,
-      "critique": "So long, it should be shorter and more direct toward the problem",
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "dev"
     },
     {
       "run": "v1",
       "case_id": "c008",
-      "summary": "User receives 'Error 500' when saving profile changes, causing data loss upon each attempt.",
+      "summary": "User receives a 'Error 500' when saving profile changes, causing modifications to be lost.",
       "passed": false,
-      "critique": "Be sure of your words, changes loss isn't the same as data loss",
+      "critique": "modifications and changes are different things, don't change words",
       "split": "dev"
     },
     {
       "run": "v1",
       "case_id": "c009",
-      "summary": "The user's mobile app crashes immediately when opening any notification.",
+      "summary": "The user's mobile app crashes immediately upon opening any notification.",
       "passed": true,
-      "critique": "no critique here",
+      "critique": "Its good and has the core issue.",
       "split": "test"
     },
     {
       "run": "v1",
       "case_id": "c010",
-      "summary": "The user is unable to access their account or device and is seeking assistance to regain access.",
+      "summary": "User is unable to access their account and is locked out.",
       "passed": true,
       "critique": "No critique here",
       "split": "test"
@@ -93,9 +93,9 @@
     {
       "run": "v1",
       "case_id": "c012",
-      "summary": "Request to change email address from john@old.com to john@new.com",
-      "passed": true,
-      "critique": "no critique here",
+      "summary": "Customer requests to change their account email from john@old.com to john@new.com",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue. The summary shouldn't include details like old and new email",
       "split": "test"
     },
     {
@@ -103,39 +103,39 @@
       "case_id": "c013",
       "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page.",
       "passed": false,
-      "critique": "Too long for a summary",
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "test"
     },
     {
       "run": "v1",
       "case_id": "c014",
-      "summary": "User is unable to locate the CSV export option in Settings and is seeking guidance on how to export their data.",
-      "passed": true,
-      "critique": "no critique here",
+      "summary": "User is unable to locate the CSV export option in Settings and is seeking instructions on how to export their data to CSV format.",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "test"
     },
     {
       "run": "v1",
       "case_id": "c015",
-      "summary": "Customer is thanking the support team for resolving the login issue last week and confirms everything is now working properly.",
-      "passed": false,
-      "critique": "So long",
+      "summary": "Customer expresses gratitude for resolving the login issue and confirms everything is now working properly.",
+      "passed": true,
+      "critique": "no critique here",
       "split": "dev"
     },
     {
       "run": "v1",
       "case_id": "c016",
       "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount.",
-      "passed": true,
-      "critique": "The summary is clear and well translated but is too long",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "test"
     },
     {
       "run": "v2",
       "case_id": "c001",
       "summary": "The customer needs to update their credit card on file as the current one expires next month.",
-      "passed": true,
-      "critique": "no critique here",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "test"
     },
     {
@@ -143,7 +143,7 @@
       "case_id": "c003",
       "summary": "Customer cannot log in.",
       "passed": true,
-      "critique": "no critique here",
+      "critique": "No critique here",
       "split": "train"
     },
     {
@@ -151,15 +151,15 @@
       "case_id": "c004",
       "summary": "Customer was charged $49.99 twice on March 3 and is experiencing technical issues with the export button spinning indefinitely since yesterday's update, requesting a refund for the duplicate charge và",
       "passed": false,
-      "critique": "The summary contains weird characters, and should be shorter",
+      "critique": "The summary shouldn't include weird words.",
       "split": "test"
     },
     {
       "run": "v2",
       "case_id": "c005",
       "summary": "The customer expected a refund for their cancellation last week but still sees the charge on their statement and is asking for help.",
-      "passed": true,
-      "critique": "no critique here",
+      "passed": false,
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "train"
     },
     {
@@ -167,7 +167,7 @@
       "case_id": "c006",
       "summary": "Request for a copy of the January invoice to provide to their accountant.boxes",
       "passed": false,
-      "critique": "The summary contains weird word \".boxes\" don't mention things that are unrelated to the email",
+      "critique": "Summary length is long, and weird word in the end \"boxes\"",
       "split": "dev"
     },
     {
@@ -175,15 +175,15 @@
       "case_id": "c007",
       "summary": "The dashboard won't load after an update that was supposed to improve performance, and the user has tried for 20 minutes without success.",
       "passed": true,
-      "critique": "no critique here",
+      "critique": "No critique here",
       "split": "dev"
     },
     {
       "run": "v2",
       "case_id": "c008",
       "summary": "The user encounters an 'Error 500' when saving profile changes, resulting in lost modifications.",
-      "passed": true,
-      "critique": "no critique here",
+      "passed": false,
+      "critique": "Summary length is long, and there is a change of words, its 'changes' not 'modification'",
       "split": "dev"
     },
     {
@@ -191,15 +191,15 @@
       "case_id": "c009",
       "summary": "The mobile app crashes immediately when opening any notification.",
       "passed": true,
-      "critique": "no critique here",
+      "critique": "No critique here",
       "split": "test"
     },
     {
       "run": "v2",
       "case_id": "c010",
       "summary": "Customer is locked out and needs assistance accessing their account.",
-      "passed": true,
-      "critique": "no critique here",
+      "passed": false,
+      "critique": "Don't assume user's needs unless he explicitly mention his need.",
       "split": "test"
     },
     {
@@ -207,7 +207,7 @@
       "case_id": "c011",
       "summary": "The customer forgot their password and cannot access their account, requesting assistance to reset it.",
       "passed": true,
-      "critique": "no critique here",
+      "critique": "It has the core issue and nothing more.",
       "split": "dev"
     },
     {
@@ -215,23 +215,23 @@
       "case_id": "c012",
       "summary": "The customer requests to change their account email address from john@old.com to john@new.com.",
       "passed": false,
-      "critique": "no need of the emails here, the summary should have only the core problem 'requesting email change'",
+      "critique": "There should no mention for old and new emails.",
       "split": "dev"
     },
     {
       "run": "v2",
       "case_id": "c013",
       "summary": "The customer is asking whether the Team plan includes SSO, seeking clarification on the pricing page's information.",
-      "passed": false,
-      "critique": "So long, for example 'seeking clarification on the pricing page' is enough",
+      "passed": true,
+      "critique": "No critique here",
       "split": "test"
     },
     {
       "run": "v2",
       "case_id": "c014",
       "summary": "The customer asks how to export their data to CSV and mentions they couldn't find the option in Settings.",
-      "passed": false,
-      "critique": "The summary is too long and has no differs from the original email",
+      "passed": true,
+      "critique": "Its direct and has the main issue",
       "split": "dev"
     },
     {
@@ -239,7 +239,7 @@
       "case_id": "c015",
       "summary": "The customer thanked the support team for resolving their login issue last week, confirming that everything is now working properly.",
       "passed": false,
-      "critique": "No details are required in those types of email, especially the unnecessary mention of the problem",
+      "critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
       "split": "test"
     },
     {
@@ -247,7 +247,7 @@
       "case_id": "c016",
       "summary": "العميل أفاد بتم خصم اشتراكي مرتين هذا الشهر من نفس البطاقة وطلب إرجاع المبلغ الزائد.",
       "passed": false,
-      "critique": "The mode's summary should be in english as the reader's language not the customer's",
+      "critique": "It should be written with the reader's language which is english, not the user's language.",
       "split": "dev"
     }
   ]
