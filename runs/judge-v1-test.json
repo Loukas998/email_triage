@@ -1,0 +1,102 @@
+[
+{
+  "run": "v1",
+  "case_id": "c002",
+  "split": "test",
+  "summary": "Customer reports duplicate subscription charges and app crashes when opening settings, requesting resolution for both issues.",
+  "human_passed": false,
+  "human_critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
+  "judge_passed": false,
+  "judge_critique": "Failed rule 4 (Summary length) because of the words \"requesting resolution for both issues\", as unnecessary user requests should not be included."
+},
+{
+  "run": "v1",
+  "case_id": "c009",
+  "split": "test",
+  "summary": "The user's mobile app crashes immediately upon opening any notification.",
+  "human_passed": true,
+  "human_critique": "Its good and has the core issue.",
+  "judge_passed": true,
+  "judge_critique": ""
+},
+{
+  "run": "v1",
+  "case_id": "c010",
+  "split": "test",
+  "summary": "User is unable to access their account and is locked out.",
+  "human_passed": true,
+  "human_critique": "No critique here",
+  "judge_passed": true,
+  "judge_critique": ""
+},
+{
+  "run": "v1",
+  "case_id": "c012",
+  "split": "test",
+  "summary": "Customer requests to change their account email from john@old.com to john@new.com",
+  "human_passed": false,
+  "human_critique": "Too long to be a summary, it should be shorter and contains only the core issue. The summary shouldn't include details like old and new email",
+  "judge_passed": true,
+  "judge_critique": ""
+},
+{
+  "run": "v1",
+  "case_id": "c013",
+  "split": "test",
+  "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page.",
+  "human_passed": false,
+  "human_critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
+  "judge_passed": false,
+  "judge_critique": "Breaks Rule 4 (Summary length) with 'as it's not specified on the pricing page', which includes unnecessary background detail rather than focusing solely on the core issue."
+},
+{
+  "run": "v1",
+  "case_id": "c014",
+  "split": "test",
+  "summary": "User is unable to locate the CSV export option in Settings and is seeking instructions on how to export their data to CSV format.",
+  "human_passed": false,
+  "human_critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
+  "judge_passed": false,
+  "judge_critique": "Rule 4 (Summary length) was broken by the words \"in Settings and is seeking instructions on how to export their data to CSV format\" because it includes unnecessary details rather than just the core issue."
+},
+{
+  "run": "v1",
+  "case_id": "c016",
+  "split": "test",
+  "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount.",
+  "human_passed": false,
+  "human_critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
+  "judge_passed": false,
+  "judge_critique": "Failed Rule 4 (Summary length) because the words 'this month from the same card and requests a refund for the overcharged amount' include unnecessary details and requests beyond the core issue."
+},
+{
+  "run": "v2",
+  "case_id": "c001",
+  "split": "test",
+  "summary": "The customer needs to update their credit card on file as the current one expires next month.",
+  "human_passed": false,
+  "human_critique": "Too long to be a summary, it should be shorter and contains only the core issue.",
+  "judge_passed": false,
+  "judge_critique": "Failed rule 4 (Summary length) because of the words \"as the current one expires next month\", which include unnecessary information beyond the core issue."
+},
+{
+  "run": "v2",
+  "case_id": "c004",
+  "split": "test",
+  "summary": "Customer was charged $49.99 twice on March 3 and is experiencing technical issues with the export button spinning indefinitely since yesterday's update, requesting a refund for the duplicate charge và",
+  "human_passed": false,
+  "human_critique": "The summary shouldn't include weird words.",
+  "judge_passed": false,
+  "judge_critique": "Breaks Rule 4 (Summary length) by including unnecessary dates, details, and requests with the words 'March 3', 'since yesterday's update', and 'requesting a refund for the duplicate charge'."
+},
+{
+  "run": "v2",
+  "case_id": "c009",
+  "split": "test",
+  "summary": "The mobile app crashes immediately when opening any notification.",
+  "human_passed": true,
+  "human_critique": "No critique here",
+  "judge_passed": true,
+  "judge_critique": ""
+}
+]

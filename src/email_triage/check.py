@@ -6,13 +6,12 @@
 
 import sys
 from collections import Counter
-from turtle import mode
 
 from pydantic import ValidationError
 
 from email_triage.dataset import load, PROJECT_ROOT
 from email_triage.prompts import load_prompt
-from email_triage.triage import triage
+from email_triage.triage import triage, TriageError
 from email_triage.runs import Run, RunOutput, save_run
 
 MARK = {"exact": "  ", "acceptable": "~ ", "missed": "X ", "error": "! "}
@@ -27,28 +26,36 @@ def main(prompt_name: str) -> None:
     for case in dataset.cases:
         try:
             result = triage(case.input, config)
-        except ValidationError as err:
+        except TriageError as err:
             # The model hit the token cap mid-thought, or returned something the schema rejects.
             # Count it and keep going: one bad call must not take the whole run down.
             tally["error"] += 1
-            outputs.append(RunOutput(case_id=case.id, verdict="error"))
-            print(f"{MARK['error']}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got=ERROR ({err.error_count()} validation errors)")
+            outputs.append(RunOutput(
+                case_id=case.id, verdict="error", 
+                duration_ms=err.usage.duration_ms, prompts_tokens=err.usage.prompt_tokens, output_tokens=err.usage.output_tokens
+            ))
+            print(f"{MARK['error']}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got=ERROR     {err.usage.duration_ms / 1000:5.1f} s · {err.usage.output_tokens} tokens out · stopped by {err.done_reason!r}")
             print()
             continue
 
-        verdict = case.verdict(result.category)
+        verdict = case.verdict(result.output.category)
         tally[verdict] += 1
-        outputs.append(RunOutput(case_id=case.id, verdict=verdict, category=result.category, summary=result.summary))
+        outputs.append(RunOutput(
+            case_id=case.id, verdict=verdict, category=result.output.category, summary=result.output.summary, 
+            duration_ms=result.usage.duration_ms, prompts_tokens=result.usage.prompt_tokens, output_tokens=result.usage.output_tokens
+        ))
 
-        print(f"{MARK[verdict]}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got={result.category}")
-        print(f"          model: {result.summary}")
+        print(f"{MARK[verdict]}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got={result.output.category:<9} {result.usage.duration_ms / 1000:5.1f} s · {result.usage.output_tokens} tokens out")
+        print(f"          model: {result.output.summary}")
         if verdict != "exact":
             print(f"          yours: {case.expected_summary}")
             print(f"          notes: {case.notes}")
         print()
 
     n = len(dataset.cases)
-    print(f"{n} cases · exact {tally['exact']} · acceptable {tally['acceptable']} · missed {tally['missed']} · error {tally['error']}")
+    total_s = sum(out.duration_ms for out in outputs) / 1000
+    tokens_out = sum(out.output_tokens for out in outputs)
+    print(f"{n} cases · exact {tally['exact']} · acceptable {tally['acceptable']} · missed {tally['missed']} · error {tally['error']} · {total_s:.0f} s · {tokens_out} tokens out")
     print(f"prompt {config.id} v{config.version} (think={config.think}) · dataset v{dataset.version} · guideline v{dataset.guideline_version}")
 
     path = save_run(Run(

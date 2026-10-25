@@ -27,7 +27,7 @@ from email_triage.agreement import describe, measure
 from email_triage.dataset import PROJECT_ROOT, load
 from email_triage.labels import SummaryLabel, load_labels
 from email_triage.prompts import PROMPTS_DIR
-from email_triage.runs import RUNS_DIR
+from email_triage.runs import RUNS_DIR, SummaryVerdict, JudgedRun, load_run, save_judged
 
 RUBRIC_PATH = PROJECT_ROOT / "golden" / "SUMMARY-RUBRIC.md"
 ENV_PATH = PROJECT_ROOT / ".env"
@@ -187,6 +187,33 @@ def main(split: str, judge_name: str = "judge-v1", ask=ask_gemini) -> None:
         print(f"\nSTOPPED before {len(targets) - len(results)} of {len(targets)} labels: {stopped}")
         print("Re-run tomorrow — it resumes from the saved file. The rates above are on what is measured so far; say that n when you quote them.")
 
+
+def judge_run(run_name: str, judge_name: str = "judge-v1", ask=ask_gemini) -> None:
+    """Use the judge — only after `test` has told you how far to trust it."""
+    config = load_judge(judge_name)
+    labels = load_labels()
+    emails = {case.id: case.input for case in load().cases}
+    train = [label for label in labels.labels if label.split == "train"]
+    system = build_system(config, RUBRIC_PATH.read_text(), format_examples(train, emails))
+
+    run = load_run(run_name)
+    verdicts: list[SummaryVerdict] = []
+    for out in run.outputs:
+        if out.summary is None:
+            continue  # the call errored; nothing to judge
+        verdict = ask(config, system, emails[out.case_id], out.summary)
+        verdicts.append(SummaryVerdict(case_id=out.case_id, passed=verdict.passed, critique=verdict.critique))
+        print(f"{'  ' if verdict.passed else 'X '}{out.case_id:<5} {verdict.critique}")
+
+    passed = sum(v.passed for v in verdicts)
+    print()
+    print(f"run {run_name} · {passed}/{len(verdicts)} summaries pass · judge {config.id} v{config.version} · rubric v{labels.rubric_version}")
+    path = save_judged(JudgedRun(
+        run=run_name, judge=judge_name, judge_version=config.version,
+        rubric_version=labels.rubric_version, verdicts=verdicts,
+    ))
+    print(f"saved {path.relative_to(PROJECT_ROOT)}")
+    
 
 if __name__ == "__main__":
     # python -m email_triage.judge <split> [judge name]
