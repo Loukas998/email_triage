@@ -32,7 +32,7 @@ def main(prompt_name: str) -> None:
             tally["error"] += 1
             outputs.append(RunOutput(
                 case_id=case.id, verdict="error", 
-                duration_ms=err.usage.duration_ms, prompts_tokens=err.usage.prompt_tokens, output_tokens=err.usage.output_tokens
+                duration_ms=err.usage.duration_ms, prompt_tokens=err.usage.prompt_tokens, output_tokens=err.usage.output_tokens
             ))
             print(f"{MARK['error']}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got=ERROR     {err.usage.duration_ms / 1000:5.1f} s · {err.usage.output_tokens} tokens out · stopped by {err.done_reason!r}")
             print()
@@ -42,7 +42,7 @@ def main(prompt_name: str) -> None:
         tally[verdict] += 1
         outputs.append(RunOutput(
             case_id=case.id, verdict=verdict, category=result.output.category, summary=result.output.summary, 
-            duration_ms=result.usage.duration_ms, prompts_tokens=result.usage.prompt_tokens, output_tokens=result.usage.output_tokens
+            duration_ms=result.usage.duration_ms, prompt_tokens=result.usage.prompt_tokens, output_tokens=result.usage.output_tokens
         ))
 
         print(f"{MARK[verdict]}{case.id:<7} {case.difficulty:<6} expected={case.expected_category:<9} got={result.output.category:<9} {result.usage.duration_ms / 1000:5.1f} s · {result.usage.output_tokens} tokens out")

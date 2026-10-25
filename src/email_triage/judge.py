@@ -3,6 +3,7 @@
     uv run python -m email_triage.judge dev              # tune: read every disagreement, revise the rubric/prompt, re-run
     uv run python -m email_triage.judge test             # once, at the end, with the prompt frozen
     uv run python -m email_triage.judge dev judge-v2     # a different judge config (model, rubric wording, examples)
+    uv run python -m email_triage.judge run v1           # use the measured judge on every summary in runs/v1.json
 
 Verdicts are saved after every call and re-runs resume from the file: on a free tier measured in
 tens of calls a day, a verdict already paid for is never bought twice.
@@ -216,6 +217,10 @@ def judge_run(run_name: str, judge_name: str = "judge-v1", ask=ask_gemini) -> No
     
 
 if __name__ == "__main__":
-    # python -m email_triage.judge <split> [judge name]
-    main(sys.argv[1] if len(sys.argv) > 1 else "dev",
-         sys.argv[2] if len(sys.argv) > 2 else "judge-v1")
+    # python -m email_triage.judge run <run name> [judge name]     — judge every summary in a run
+    # python -m email_triage.judge <split>   [judge name]          — measure the judge against your labels
+    if len(sys.argv) > 2 and sys.argv[1] == "run":
+        judge_run(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "judge-v1")
+    else:
+        main(sys.argv[1] if len(sys.argv) > 1 else "dev",
+             sys.argv[2] if len(sys.argv) > 2 else "judge-v1")

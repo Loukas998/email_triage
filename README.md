@@ -97,3 +97,5 @@ src/email_triage/
   check.py              # run all cases, print report
 tests/                  # unit + eval tests
 ```
+
+90% measured on rubric v1; rule 5 fixed afterwards, found from the one disagreement.

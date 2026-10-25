@@ -10,97 +10,145 @@
       "case_id": "c001",
       "verdict": "exact",
       "category": "account",
-      "summary": "Customer requests to update their credit card information due to the current card's expiration next month."
+      "summary": "Customer requests to update their credit card information due to the current card's expiration next month.",
+      "duration_ms": 12562,
+      "prompt_tokens": 57,
+      "output_tokens": 201
     },
     {
       "case_id": "c002",
       "verdict": "exact",
       "category": "billing",
-      "summary": "Customer reports duplicate subscription charges and app crashes when opening settings, requesting resolution for both issues."
+      "summary": "Customer reports duplicate subscription charges and app crashes when opening settings, requesting resolution for both issues.",
+      "duration_ms": 12341,
+      "prompt_tokens": 66,
+      "output_tokens": 295
     },
     {
       "case_id": "c003",
       "verdict": "acceptable",
       "category": "technical",
-      "summary": "User is unable to log in and requires assistance."
+      "summary": "User is unable to log in and requires assistance.",
+      "duration_ms": 6096,
+      "prompt_tokens": 42,
+      "output_tokens": 143
     },
     {
       "case_id": "c004",
       "verdict": "exact",
       "category": "billing",
-      "summary": "Customer reports duplicate $49.99 charges on March 3 and export button malfunctioning since yesterday's update, requesting refund and resolution for both issues."
+      "summary": "Customer reports duplicate $49.99 charges on March 3 and export button malfunctioning since yesterday's update, requesting refund and resolution for both issues.",
+      "duration_ms": 10059,
+      "prompt_tokens": 76,
+      "output_tokens": 237
     },
     {
       "case_id": "c005",
       "verdict": "missed",
       "category": "account",
-      "summary": "The user is seeking assistance with a refund that was supposed to be processed for a canceled order last week, as the charge still appears on their statement."
+      "summary": "The user is seeking assistance with a refund that was supposed to be processed for a canceled order last week, as the charge still appears on their statement.",
+      "duration_ms": 12211,
+      "prompt_tokens": 70,
+      "output_tokens": 289
     },
     {
       "case_id": "c006",
       "verdict": "exact",
       "category": "billing",
-      "summary": "The user is requesting a copy of their January invoice to provide to their accountant."
+      "summary": "The user is requesting a copy of their January invoice to provide to their accountant.",
+      "duration_ms": 7110,
+      "prompt_tokens": 58,
+      "output_tokens": 167
     },
     {
       "case_id": "c007",
       "verdict": "exact",
       "category": "technical",
-      "summary": "User reports dashboard failure to load after a performance update, expressing frustration with the issue persisting for 20 minutes."
+      "summary": "User reports dashboard failure to load after a performance update, expressing frustration with the issue persisting for 20 minutes.",
+      "duration_ms": 7632,
+      "prompt_tokens": 74,
+      "output_tokens": 178
     },
     {
       "case_id": "c008",
       "verdict": "exact",
       "category": "technical",
-      "summary": "User receives a 'Error 500' when saving profile changes, causing modifications to be lost."
+      "summary": "User receives a 'Error 500' when saving profile changes, causing modifications to be lost.",
+      "duration_ms": 9069,
+      "prompt_tokens": 63,
+      "output_tokens": 212
     },
     {
       "case_id": "c009",
       "verdict": "exact",
       "category": "technical",
-      "summary": "The user's mobile app crashes immediately upon opening any notification."
+      "summary": "The user's mobile app crashes immediately upon opening any notification.",
+      "duration_ms": 10739,
+      "prompt_tokens": 50,
+      "output_tokens": 252
     },
     {
       "case_id": "c010",
       "verdict": "exact",
       "category": "account",
-      "summary": "User is unable to access their account and is locked out."
+      "summary": "User is unable to access their account and is locked out.",
+      "duration_ms": 5944,
+      "prompt_tokens": 41,
+      "output_tokens": 138
     },
     {
       "case_id": "c011",
       "verdict": "exact",
       "category": "account",
-      "summary": "User forgot their password and is unable to access their account, requesting assistance to reset it."
+      "summary": "User forgot their password and is unable to access their account, requesting assistance to reset it.",
+      "duration_ms": 11368,
+      "prompt_tokens": 63,
+      "output_tokens": 268
     },
     {
       "case_id": "c012",
       "verdict": "exact",
       "category": "account",
-      "summary": "Customer requests to change their account email from john@old.com to john@new.com"
+      "summary": "Customer requests to change their account email from john@old.com to john@new.com",
+      "duration_ms": 9338,
+      "prompt_tokens": 61,
+      "output_tokens": 217
     },
     {
       "case_id": "c013",
       "verdict": "missed",
       "category": "billing",
-      "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page."
+      "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page.",
+      "duration_ms": 8016,
+      "prompt_tokens": 63,
+      "output_tokens": 187
     },
     {
       "case_id": "c014",
       "verdict": "acceptable",
       "category": "technical",
-      "summary": "User is unable to locate the CSV export option in Settings and is seeking instructions on how to export their data to CSV format."
+      "summary": "User is unable to locate the CSV export option in Settings and is seeking instructions on how to export their data to CSV format.",
+      "duration_ms": 6812,
+      "prompt_tokens": 59,
+      "output_tokens": 159
     },
     {
       "case_id": "c015",
       "verdict": "exact",
       "category": "general",
-      "summary": "Customer expresses gratitude for resolving the login issue and confirms everything is now working properly."
+      "summary": "Customer expresses gratitude for resolving the login issue and confirms everything is now working properly.",
+      "duration_ms": 8456,
+      "prompt_tokens": 54,
+      "output_tokens": 197
     },
     {
       "case_id": "c016",
       "verdict": "exact",
       "category": "billing",
-      "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount."
+      "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount.",
+      "duration_ms": 7171,
+      "prompt_tokens": 67,
+      "output_tokens": 168
     }
   ]
 }

@@ -1,4 +1,4 @@
-# Summary rubric — v1
+# Summary rubric — v2
 
 One person labels (me). A summary passes only if it breaks none of these
 rules. When a summary is hard to call, I add or sharpen the rule here
@@ -13,7 +13,7 @@ first, then label — never the other way round.
    not in the customer's language.
 4. **Summary length** The summary should include only the core customer's issue,
    not a full detailed dates, user's data or any other unnecessary information.
-5. **Credentials Details** The summary should include any emails or passwords,
+5. **Credentials Details** The summary should not include any emails or passwords,
    this rule apply to new and old credentials.
 
 Passing is not "good". Passing is "breaks no rule". If a summary feels

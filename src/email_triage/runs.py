@@ -27,7 +27,7 @@ class RunOutput(BaseModel):
     """None when the call errored (token cap, schema rejection)."""
     summary: str | None = None
     duration_ms: int | None = None
-    prompts_tokens: int | None = None
+    prompt_tokens: int | None = None
     output_tokens: int | None = None
     """All three None when the call errored: there is no response to read them from."""
 
@@ -47,7 +47,7 @@ class Run(BaseModel):
 
 def save_run(run: Run) -> Path:
     RUNS_DIR.mkdir(exist_ok=True)
-    path = RUNS_DIR / f"{run.prompt_version}.json"
+    path = RUNS_DIR / f"{run.prompt}.json"
     path.write_text(run.model_dump_json(indent=2) + "\n")
     return path
 
