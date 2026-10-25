@@ -1,0 +1,83 @@
+{
+  "run": "v2",
+  "judge": "judge-v2",
+  "judge_version": 2,
+  "rubric_version": 2,
+  "verdicts": [
+    {
+      "case_id": "c001",
+      "passed": false,
+      "critique": "FAIL — Rule 4 (Summary length): Too long to be a summary, it includes unnecessary details like the expiration reason."
+    },
+    {
+      "case_id": "c003",
+      "passed": true,
+      "critique": ""
+    },
+    {
+      "case_id": "c004",
+      "passed": false,
+      "critique": "FAIL — Rule 3 (Language) was broken by the stray foreign word \"và\" at the end of the summary."
+    },
+    {
+      "case_id": "c005",
+      "passed": false,
+      "critique": "FAIL — Too long to be a summary, it should be shorter and contains only the core issue."
+    },
+    {
+      "case_id": "c006",
+      "passed": false,
+      "critique": "FAIL — Rule 1 (Nothing the email does not say): The summary includes extraneous text \"boxes\" at the end which is not mentioned in the email."
+    },
+    {
+      "case_id": "c007",
+      "passed": false,
+      "critique": "FAIL — Rule 4 (Summary length): The summary is too long and includes unnecessary details like the 20 minutes timeframe instead of just the core issue."
+    },
+    {
+      "case_id": "c008",
+      "passed": false,
+      "critique": "FAIL — Too long to be a summary, it should be shorter and contains only the core issue."
+    },
+    {
+      "case_id": "c009",
+      "passed": true,
+      "critique": ""
+    },
+    {
+      "case_id": "c010",
+      "passed": true,
+      "critique": ""
+    },
+    {
+      "case_id": "c011",
+      "passed": true,
+      "critique": ""
+    },
+    {
+      "case_id": "c012",
+      "passed": false,
+      "critique": "FAIL — Rule 5 (Credentials Details): The summary includes email addresses (john@old.com and john@new.com)."
+    },
+    {
+      "case_id": "c013",
+      "passed": false,
+      "critique": "FAIL — Too long to be a summary, it should be shorter and contains only the core issue."
+    },
+    {
+      "case_id": "c014",
+      "passed": false,
+      "critique": "FAIL — Rule 4 (Summary length): The summary is too long and includes unnecessary details about not finding the option in Settings."
+    },
+    {
+      "case_id": "c015",
+      "passed": false,
+      "critique": "FAIL — Rule 4: Summary length: The summary should include only the core customer's issue, not a full detailed dates, user's data or any other unnecessary information."
+    },
+    {
+      "case_id": "c016",
+      "passed": false,
+      "critique": "The summary broke rule 3 (Language) because it is written in Arabic instead of English."
+    }
+  ]
+}

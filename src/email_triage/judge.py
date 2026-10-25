@@ -28,7 +28,7 @@ from email_triage.agreement import describe, measure
 from email_triage.dataset import PROJECT_ROOT, load
 from email_triage.labels import SummaryLabel, load_labels
 from email_triage.prompts import PROMPTS_DIR
-from email_triage.runs import RUNS_DIR, SummaryVerdict, JudgedRun, load_run, save_judged
+from email_triage.runs import RUNS_DIR, JudgedRun, SummaryVerdict, load_run, save_judged
 
 RUBRIC_PATH = PROJECT_ROOT / "golden" / "SUMMARY-RUBRIC.md"
 ENV_PATH = PROJECT_ROOT / ".env"
@@ -214,7 +214,7 @@ def judge_run(run_name: str, judge_name: str = "judge-v1", ask=ask_gemini) -> No
         rubric_version=labels.rubric_version, verdicts=verdicts,
     ))
     print(f"saved {path.relative_to(PROJECT_ROOT)}")
-    
+
 
 if __name__ == "__main__":
     # python -m email_triage.judge run <run name> [judge name]     — judge every summary in a run

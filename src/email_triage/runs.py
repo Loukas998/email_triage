@@ -100,3 +100,33 @@ def load_judged(run: str, judge: str) -> JudgedRun | None:
     if not path.exists():
         return None
     return JudgedRun.model_validate_json(path.read_text())
+
+
+class SummaryVerdict(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    case_id: str
+    passed: bool
+    critique: str
+
+
+class JudgedRun(BaseModel):
+    """A validated judge's verdict on every summary in one run. Kept apart from the run itself:
+    the run is what the model said; this is what a later, versioned judge thought of it."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    run: str
+    judge: str
+    """The judge config name, e.g. "judge-v1"."""
+    judge_version: int
+    rubric_version: int
+    verdicts: list[SummaryVerdict]
+
+    def passed(self, case_id: str) -> bool | None:
+        """None when the case has no verdict (the run errored on it, so there was no summary)."""
+        for verdict in self.verdicts:
+            if verdict.case_id == case_id:
+                return verdict.passed
+        return None
+
