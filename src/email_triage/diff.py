@@ -7,6 +7,7 @@ Reads runs/<name>.json for both, and runs/<name>.judge-v1.json for each if it ex
 Ordinary code over two JSON files — so it has tests, and no model is called.
 """
 
+import os
 import sys
 from statistics import median
 from typing import Literal
@@ -16,10 +17,10 @@ from pydantic import BaseModel
 from email_triage.dataset import GoldenCase, load
 from email_triage.runs import JudgedRun, Run, RunOutput, load_judged, load_run
 
-# The guide's thresholds, as fractions of the case count. Configurable here — and printed next to
-# what one case is worth, because at n = 16 a single flip is already past both of them.
-WARN = 0.03
-CRITICAL = 0.08
+# The guide's thresholds, as fractions of the case count. Set GATE_WARN / GATE_CRITICAL to change them —
+# they are printed next to what one case is worth, because at n = 16 a single flip is already past both.
+WARN = float(os.environ.get("GATE_WARN", "0.03"))
+CRITICAL = float(os.environ.get("GATE_CRITICAL", "0.08"))
 
 Severity = Literal["ok", "warn", "critical"]
 

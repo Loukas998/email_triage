@@ -1,7 +1,7 @@
 [project]
 name = "email-triage"
 version = "0.1.0"
-description = "Add your description here"
+description = "Regression testing for LLM prompts: a golden set, a validated LLM judge, run diffs, and a CI gate that blocks a prompt that breaks cases."
 readme = "README.md"
 authors = [
     { name = "Loukas998", email = "majdlouka4@gmail.com" }
@@ -15,8 +15,7 @@ dependencies = [
     "pyyaml>=6.0.3",
 ]
 
-[project.scripts]
-email-triage = "email_triage:main"
+
 
 [build-system]
 requires = ["uv_build>=0.12.13,<0.13.0"]
@@ -27,7 +26,6 @@ dev = [
     "pytest>=9.1.1",
 ]
 
-[too.pytest.ini_options]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
