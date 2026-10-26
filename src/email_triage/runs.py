@@ -8,6 +8,7 @@ judged and diffed later without calling the model again.
 
 from pathlib import Path
 from typing import Literal
+import hashlib
 
 from pydantic import BaseModel, ConfigDict
 
@@ -42,7 +43,17 @@ class Run(BaseModel):
     think: bool
     dataset_version: int
     guideline_version: int
+    """fingerprint() of prompts/<prompt>.yaml when this run was made. None on runs made before it was recorded."""
+    prompt_sha: str | None = None
+    """fingerprint() of the golden set when this run was made."""
+    dataset_sha: str | None = None
     outputs: list[RunOutput]
+
+    
+
+def fingerprint(path: Path) -> str:
+    """The first 12 hex characters of the file's SHA-256. One changed byte — a space — changes it."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
 
 
 def save_run(run: Run) -> Path:

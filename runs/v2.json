@@ -5,13 +5,15 @@
   "think": true,
   "dataset_version": 1,
   "guideline_version": 1,
+  "prompt_sha": "261499de50f7",
+  "dataset_sha": "ba97a7d39756",
   "outputs": [
     {
       "case_id": "c001",
       "verdict": "exact",
       "category": "account",
       "summary": "The customer needs to update their credit card on file as the current one expires next month.",
-      "duration_ms": 9637,
+      "duration_ms": 9467,
       "prompt_tokens": 185,
       "output_tokens": 208
     },
@@ -20,7 +22,7 @@
       "verdict": "error",
       "category": null,
       "summary": null,
-      "duration_ms": 84482,
+      "duration_ms": 85608,
       "prompt_tokens": 194,
       "output_tokens": 2048
     },
@@ -29,7 +31,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "Customer cannot log in.",
-      "duration_ms": 6284,
+      "duration_ms": 6274,
       "prompt_tokens": 170,
       "output_tokens": 142
     },
@@ -38,7 +40,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "Customer was charged $49.99 twice on March 3 and is experiencing technical issues with the export button spinning indefinitely since yesterday's update, requesting a refund for the duplicate charge và",
-      "duration_ms": 8698,
+      "duration_ms": 8862,
       "prompt_tokens": 204,
       "output_tokens": 203
     },
@@ -47,7 +49,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "The customer expected a refund for their cancellation last week but still sees the charge on their statement and is asking for help.",
-      "duration_ms": 9043,
+      "duration_ms": 9087,
       "prompt_tokens": 198,
       "output_tokens": 211
     },
@@ -56,7 +58,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "Request for a copy of the January invoice to provide to their accountant.boxes",
-      "duration_ms": 9569,
+      "duration_ms": 9587,
       "prompt_tokens": 186,
       "output_tokens": 221
     },
@@ -65,7 +67,7 @@
       "verdict": "exact",
       "category": "technical",
       "summary": "The dashboard won't load after an update that was supposed to improve performance, and the user has tried for 20 minutes without success.",
-      "duration_ms": 14240,
+      "duration_ms": 14469,
       "prompt_tokens": 202,
       "output_tokens": 333
     },
@@ -74,7 +76,7 @@
       "verdict": "exact",
       "category": "technical",
       "summary": "The user encounters an 'Error 500' when saving profile changes, resulting in lost modifications.",
-      "duration_ms": 10362,
+      "duration_ms": 11440,
       "prompt_tokens": 191,
       "output_tokens": 242
     },
@@ -83,7 +85,7 @@
       "verdict": "exact",
       "category": "technical",
       "summary": "The mobile app crashes immediately when opening any notification.",
-      "duration_ms": 8758,
+      "duration_ms": 9321,
       "prompt_tokens": 178,
       "output_tokens": 204
     },
@@ -92,7 +94,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "Customer is locked out and needs assistance accessing their account.",
-      "duration_ms": 7350,
+      "duration_ms": 7983,
       "prompt_tokens": 169,
       "output_tokens": 170
     },
@@ -101,7 +103,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "The customer forgot their password and cannot access their account, requesting assistance to reset it.",
-      "duration_ms": 11425,
+      "duration_ms": 12454,
       "prompt_tokens": 191,
       "output_tokens": 268
     },
@@ -110,7 +112,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "The customer requests to change their account email address from john@old.com to john@new.com.",
-      "duration_ms": 7913,
+      "duration_ms": 8315,
       "prompt_tokens": 189,
       "output_tokens": 180
     },
@@ -119,7 +121,7 @@
       "verdict": "exact",
       "category": "general",
       "summary": "The customer is asking whether the Team plan includes SSO, seeking clarification on the pricing page's information.",
-      "duration_ms": 44761,
+      "duration_ms": 47259,
       "prompt_tokens": 191,
       "output_tokens": 1042
     },
@@ -128,7 +130,7 @@
       "verdict": "exact",
       "category": "general",
       "summary": "The customer asks how to export their data to CSV and mentions they couldn't find the option in Settings.",
-      "duration_ms": 9771,
+      "duration_ms": 10198,
       "prompt_tokens": 187,
       "output_tokens": 224
     },
@@ -137,7 +139,7 @@
       "verdict": "acceptable",
       "category": "account",
       "summary": "The customer thanked the support team for resolving their login issue last week, confirming that everything is now working properly.",
-      "duration_ms": 8640,
+      "duration_ms": 8854,
       "prompt_tokens": 182,
       "output_tokens": 196
     },
@@ -146,7 +148,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "العميل أفاد بتم خصم اشتراكي مرتين هذا الشهر من نفس البطاقة وطلب إرجاع المبلغ الزائد.",
-      "duration_ms": 7862,
+      "duration_ms": 8241,
       "prompt_tokens": 195,
       "output_tokens": 183
     }

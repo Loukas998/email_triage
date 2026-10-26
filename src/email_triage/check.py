@@ -9,10 +9,10 @@ from collections import Counter
 
 from pydantic import ValidationError
 
-from email_triage.dataset import load, PROJECT_ROOT
-from email_triage.prompts import load_prompt
 from email_triage.triage import triage, TriageError
-from email_triage.runs import Run, RunOutput, save_run
+from email_triage.dataset import GOLDEN_PATH, load, PROJECT_ROOT
+from email_triage.prompts import load_prompt, prompt_path
+from email_triage.runs import Run, RunOutput, fingerprint, save_run
 
 MARK = {"exact": "  ", "acceptable": "~ ", "missed": "X ", "error": "! "}
 
@@ -66,6 +66,8 @@ def main(prompt_name: str) -> None:
         dataset_version=dataset.version,
         guideline_version=dataset.guideline_version,
         outputs=outputs,
+        prompt_sha=fingerprint(prompt_path(prompt_name)),
+        dataset_sha=fingerprint(GOLDEN_PATH),
     ))
     print(f"saved {path.relative_to(PROJECT_ROOT)}")
 

@@ -28,6 +28,9 @@ class PromptConfig(BaseModel):
     system: str
     num_predict: int
 
+def prompt_path(name: str) -> Path:
+    return PROMPTS_DIR / f"{name}.yaml"
+
+
 def load_prompt(name: str) -> PromptConfig:
-    path = PROMPTS_DIR / f"{name}.yaml"
-    return PromptConfig.model_validate(yaml.safe_load(path.read_text()))
+    return PromptConfig.model_validate(yaml.safe_load(prompt_path(name).read_text()))

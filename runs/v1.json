@@ -5,13 +5,15 @@
   "think": true,
   "dataset_version": 1,
   "guideline_version": 1,
+  "prompt_sha": "1da5091e291b",
+  "dataset_sha": "ba97a7d39756",
   "outputs": [
     {
       "case_id": "c001",
       "verdict": "exact",
       "category": "account",
       "summary": "Customer requests to update their credit card information due to the current card's expiration next month.",
-      "duration_ms": 12562,
+      "duration_ms": 11860,
       "prompt_tokens": 57,
       "output_tokens": 201
     },
@@ -20,7 +22,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "Customer reports duplicate subscription charges and app crashes when opening settings, requesting resolution for both issues.",
-      "duration_ms": 12341,
+      "duration_ms": 12704,
       "prompt_tokens": 66,
       "output_tokens": 295
     },
@@ -29,7 +31,7 @@
       "verdict": "acceptable",
       "category": "technical",
       "summary": "User is unable to log in and requires assistance.",
-      "duration_ms": 6096,
+      "duration_ms": 6082,
       "prompt_tokens": 42,
       "output_tokens": 143
     },
@@ -38,7 +40,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "Customer reports duplicate $49.99 charges on March 3 and export button malfunctioning since yesterday's update, requesting refund and resolution for both issues.",
-      "duration_ms": 10059,
+      "duration_ms": 10034,
       "prompt_tokens": 76,
       "output_tokens": 237
     },
@@ -47,7 +49,7 @@
       "verdict": "missed",
       "category": "account",
       "summary": "The user is seeking assistance with a refund that was supposed to be processed for a canceled order last week, as the charge still appears on their statement.",
-      "duration_ms": 12211,
+      "duration_ms": 12202,
       "prompt_tokens": 70,
       "output_tokens": 289
     },
@@ -56,7 +58,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "The user is requesting a copy of their January invoice to provide to their accountant.",
-      "duration_ms": 7110,
+      "duration_ms": 7095,
       "prompt_tokens": 58,
       "output_tokens": 167
     },
@@ -65,7 +67,7 @@
       "verdict": "exact",
       "category": "technical",
       "summary": "User reports dashboard failure to load after a performance update, expressing frustration with the issue persisting for 20 minutes.",
-      "duration_ms": 7632,
+      "duration_ms": 7835,
       "prompt_tokens": 74,
       "output_tokens": 178
     },
@@ -74,7 +76,7 @@
       "verdict": "exact",
       "category": "technical",
       "summary": "User receives a 'Error 500' when saving profile changes, causing modifications to be lost.",
-      "duration_ms": 9069,
+      "duration_ms": 9494,
       "prompt_tokens": 63,
       "output_tokens": 212
     },
@@ -83,7 +85,7 @@
       "verdict": "exact",
       "category": "technical",
       "summary": "The user's mobile app crashes immediately upon opening any notification.",
-      "duration_ms": 10739,
+      "duration_ms": 11683,
       "prompt_tokens": 50,
       "output_tokens": 252
     },
@@ -92,7 +94,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "User is unable to access their account and is locked out.",
-      "duration_ms": 5944,
+      "duration_ms": 6327,
       "prompt_tokens": 41,
       "output_tokens": 138
     },
@@ -101,7 +103,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "User forgot their password and is unable to access their account, requesting assistance to reset it.",
-      "duration_ms": 11368,
+      "duration_ms": 11897,
       "prompt_tokens": 63,
       "output_tokens": 268
     },
@@ -110,7 +112,7 @@
       "verdict": "exact",
       "category": "account",
       "summary": "Customer requests to change their account email from john@old.com to john@new.com",
-      "duration_ms": 9338,
+      "duration_ms": 9715,
       "prompt_tokens": 61,
       "output_tokens": 217
     },
@@ -119,7 +121,7 @@
       "verdict": "missed",
       "category": "billing",
       "summary": "Customer requests clarification on whether the Team plan includes SSO functionality as it's not specified on the pricing page.",
-      "duration_ms": 8016,
+      "duration_ms": 8736,
       "prompt_tokens": 63,
       "output_tokens": 187
     },
@@ -128,7 +130,7 @@
       "verdict": "acceptable",
       "category": "technical",
       "summary": "User is unable to locate the CSV export option in Settings and is seeking instructions on how to export their data to CSV format.",
-      "duration_ms": 6812,
+      "duration_ms": 7120,
       "prompt_tokens": 59,
       "output_tokens": 159
     },
@@ -137,7 +139,7 @@
       "verdict": "exact",
       "category": "general",
       "summary": "Customer expresses gratitude for resolving the login issue and confirms everything is now working properly.",
-      "duration_ms": 8456,
+      "duration_ms": 8556,
       "prompt_tokens": 54,
       "output_tokens": 197
     },
@@ -146,7 +148,7 @@
       "verdict": "exact",
       "category": "billing",
       "summary": "Customer reports their subscription was charged twice this month from the same card and requests a refund for the overcharged amount.",
-      "duration_ms": 7171,
+      "duration_ms": 7540,
       "prompt_tokens": 67,
       "output_tokens": 168
     }
