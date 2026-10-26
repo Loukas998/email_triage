@@ -3,13 +3,13 @@
 name: eval
 
 on:
-  pull_request:
+  pull-request:
   push:
     branches: [main]
 
 permissions:
   contents: read
-  pull_requests: write # to post the report on PR
+  pull-requests: write # to post the report on PR
 
 jobs:
   tests:
