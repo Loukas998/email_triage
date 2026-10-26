@@ -8,8 +8,8 @@ on:
     branches: [main]
 
 permissions:
-  content: read
-  pull_request: write # to post the report on PR
+  contents: read
+  pull_requests: write # to post the report on PR
 
 jobs:
   tests:
@@ -23,34 +23,34 @@ jobs:
 # Runs on every PR, not only ones touching prompts/: a required check that is skipped never
 # reports, and GitHub then waits for it forever.
 
-gate:
-  if: github.event_name == 'pull_request'
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v7
-      with:
-        fetch-depth: 0   # the base branch's history, for the two git commands below
-    - uses: astral-sh/setup-uv@v10
-    - run: uv sync --locked
+  gate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0   # the base branch's history, for the two git commands below
+      - uses: astral-sh/setup-uv@v10
+      - run: uv sync --locked
 
-    - name: Gate
-      env:
-        BASE: origin/${{ github.base_ref }}
-      run: |
-        # Measured against what the base branch ships today, not what this PR claims it ships.
-        baseline=$(git show "$BASE:prompts/baseline.txt" 2>/dev/null || cat prompts/baseline.txt)
-        # Every triage prompt this PR adds or edits, plus the baseline it proposes.
-        candidates=$( { git diff --name-only --diff-filter=AM "$BASE"...HEAD -- 'prompts/v*.yaml' \
-                        | xargs -r -n1 basename -s .yaml; cat prompts/baseline.txt; } | sort -u)
-        echo "baseline: $baseline · candidates: $candidates"
-        uv run python -m email_triage.gate "$baseline" $candidates --report report.md
+      - name: Gate
+        env:
+          BASE: origin/${{ github.base_ref }}
+        run: |
+          # Measured against what the base branch ships today, not what this PR claims it ships.
+          baseline=$(git show "$BASE:prompts/baseline.txt" 2>/dev/null || cat prompts/baseline.txt)
+          # Every triage prompt this PR adds or edits, plus the baseline it proposes.
+          candidates=$( { git diff --name-only --diff-filter=AM "$BASE"...HEAD -- 'prompts/v*.yaml' \
+                          | xargs -r -n1 basename -s .yaml; cat prompts/baseline.txt; } | sort -u)
+          echo "baseline: $baseline · candidates: $candidates"
+          uv run python -m email_triage.gate "$baseline" $candidates --report report.md
 
-    - name: Post the report on the PR
-      if: always()
-      env:
-        GH_TOKEN: ${{ github.token }}
-        PR: ${{ github.event.pull_request.number }}
-      run: |
-        [ -f report.md ] || exit 0
-        cat report.md >> "$GITHUB_STEP_SUMMARY"
-        gh pr comment "$PR" --body-file report.md --edit-last || gh pr comment "$PR" --body-file report.md
+      - name: Post the report on the PR
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          [ -f report.md ] || exit 0
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+          gh pr comment "$PR" --body-file report.md --edit-last || gh pr comment "$PR" --body-file report.md
