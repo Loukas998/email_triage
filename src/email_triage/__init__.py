@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from email-triage!")
+"""Triage support emails with a local model, and measure every prompt change before it ships."""

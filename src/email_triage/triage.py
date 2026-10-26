@@ -70,11 +70,13 @@ def triage(email: str, config: PromptConfig) -> Triaged:
     return Triaged(output=output, usage=Usage.from_response(response))
 
 if __name__ == "__main__":
-    result = triage(
-        "hi, i was charged twice for my subscription this month "
-        "and the app also keeps crashing when i open settings. "
-        "can someone sort this out"
-    )
+    # uv run python -m email_triage.triage v2 "I was charged twice this month."
+    import sys
+    from email_triage.prompts import load_prompt
 
-    print(result)
-    print(result.category)
+    try:
+        result = triage(sys.argv[2], load_prompt(sys.argv[1]))
+    except TriageError as err:
+        raise SystemExit(f"no usable answer after {err.usage.output_tokens} tokens (stopped by {err.done_reason!r})")
+    print(result.output.model_dump_json(indent=2))
+    print(f"{result.usage.duration_ms / 1000:.1f} s · {result.usage.prompt_tokens} tokens in · {result.usage.output_tokens} out")
